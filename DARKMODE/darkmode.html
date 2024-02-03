@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ganti warno</title>
+    <style>
+        body{
+            background-color: white;
+        }
+        .dark-mode{
+            background-color: black;
+            color: white;
+        }
+
+
+    </style>
+</head>
+<body>
+    <h1>HALO BANG</h1>
+    <button id="tombolgenti" onclick="GentiWarno()">😁</button>
+    <script>
+        const mode = ["Putih"];
+        const tombol = document.getElementById("tombolgenti");
+        function GentiWarno() {
+            var element = document.body;
+            element.classList.toggle("dark-mode");
+        }
+        tombol.addEventListener("click", function onClick(event) {
+                tombol.textContent = "😂";
+                document.body.appendChild(tombolgenti);
+                const mode = ["Hitam"];
+        });
+
+        if (mode == "Hitam") {
+            tombol.textContent = "😁";
+            document.body.appendChild(tombolgenti);
+            const mode = ["Putih"];
+        }
+
+
+
+
+    </script>
+</body>
+</html>
