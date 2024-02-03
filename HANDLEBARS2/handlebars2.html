@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="handlebars.js"></script>
+</head>
+<body>
+    <div class="pokemon-container"></div>
+
+    <script id="pokemonCard" type="text/x-handlebars-template">
+        {{#each pokemons }}
+            <h1 id="title">{{ title }}</h1>
+            <p id="description">{{ description }}</p>
+            {{#if image }}
+                <img src="{{ image }}" alt="Image" id="image">
+            {{else}}
+                <p>No Image</p>
+            {{/if}}
+        {{/each}}
+    </script>
+
+    <script>
+        const data = {
+            pokemons: [
+                {
+                    title: "Judul 1",
+                    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni aspernatur quia eveniet consequuntur facere tempore mollitia totam cumque accusantium praesentium.",
+                    image: "gunawan.jpg"
+                },
+                {
+                    title: "Judul 2",
+                    description: "Wiwi Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni aspernatur quia eveniet consequuntur facere tempore mollitia totam cumque accusantium praesentium.",
+                    image: "gunawan2.png"
+                }   
+            ]
+        };
+
+        const pokemonsTemplate = Handlebars.compile(document.getElementById("pokemonCard").innerHTML);
+        document.querySelector(".pokemon-container").innerHTML = pokemonsTemplate(data);
+    </script>
+</body>
+</html>
